@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  db:
+    image: hypriot/rpi-mysql
+    ports:
+      - 3306
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=MYSQL_ROOT_PASSWORD
+
+  piwik:
+    build: ./
+    ports:
+      - 9000:9000
+    depends_on:
+      - db
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=MYSQL_ROOT_PASSWORD

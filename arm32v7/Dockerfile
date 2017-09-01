@@ -1,4 +1,4 @@
-FROM arm32v7/php:5.6-fpm
+FROM arm32v7/php:5.6
 
 RUN apt-get update && apt-get install -y \
       libjpeg-dev \
