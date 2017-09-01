@@ -11,4 +11,5 @@ docker-machine create -d scaleway \
 
 eval $(docker-machine env piwik)
 
-docker build .
+# The build phase takes some time due to building php from source
+docker build -t "arm32v7:piwik" .
